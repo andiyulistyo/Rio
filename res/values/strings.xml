@@ -3,4 +3,10 @@
     <string name="app_name">OSPF</string>
     <string name="namarouter">Input Nama Router</string>
     <string name="inputNama">Input Nama Router</string>
+    <string name="selanjutnya">selanjutnya</string>
+    <string name="namarouternya">Nama Router</string>
+    <string name="bandwith">Input Bandwith</string>
+    <string name="hintIP">Input IP</string>
+    <string name="hintSubnet">Input Subnet</string>
+    <string name="inputdetail">Input Detail Router</string>
 </resources>

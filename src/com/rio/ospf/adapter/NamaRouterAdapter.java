@@ -24,7 +24,7 @@ public class NamaRouterAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    private HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
+    public HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
 
     private ArrayList<Hashtable<String, String>> data;
 

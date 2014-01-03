@@ -26,8 +26,10 @@ public class BanyakRouter extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        // ambil nilai dari inputan  user
         int router = Integer.valueOf(editTextInput.getText().toString());
 
+        // pass ke class selanjutnya
         Intent intent = new Intent(getApplication(), NamaRouter.class);
         intent.putExtra("router", router);
         startActivity(intent);

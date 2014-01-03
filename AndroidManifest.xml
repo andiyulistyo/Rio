@@ -13,5 +13,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".NamaRouter" android:label="@string/inputNama"/>
+        <activity android:name=".InputDetailRouter" android:label="@string/inputdetail"/>
     </application>
 </manifest>
