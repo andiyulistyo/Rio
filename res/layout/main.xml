@@ -4,10 +4,14 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <TextView
+    <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World, BanyakRouter"
-            />
+            android:id="@+id/editTextBanyakRouter"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selanjutnya"
+            android:id="@+id/buttonSelanjutnya" android:layout_gravity="right"/>
 </LinearLayout>
 
