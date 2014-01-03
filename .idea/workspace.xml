@@ -31,13 +31,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fed379be-7b7b-485b-9523-81ee578466d8" name="Default" comment="tambah untuk input nama router">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/rio/ospf/BanyakRouter.java" afterPath="$PROJECT_DIR$/src/com/rio/ospf/BanyakRouter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="fed379be-7b7b-485b-9523-81ee578466d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OSPF.iws" />
@@ -137,9 +131,8 @@
       <file leaf-file-name="NamaRouterAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/rio/ospf/adapter/NamaRouterAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="3" selection-start="458" selection-end="458" vertical-scroll-proportion="0.66057444" vertical-offset="32" max-vertical-offset="1425">
+            <state line="4" column="32" selection-start="125" selection-end="125" vertical-scroll-proportion="0.7" vertical-offset="32" max-vertical-offset="1425">
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#558#566#0" expanded="true" />
                 <element signature="e#701#718#0" expanded="true" />
                 <element signature="e#1991#2264#0" expanded="true" />
@@ -506,6 +499,11 @@
       <created>1388680743272</created>
       <updated>1388680743272</updated>
     </task>
+    <task id="LOCAL-00001" summary="tambah untuk input nama router">
+      <created>1388721713099</created>
+      <updated>1388721713099</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -530,10 +528,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="4" width="1346" height="728" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.89016396" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896763" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -553,7 +551,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2576923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -613,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="55" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="1530">
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#558#566#0" expanded="true" />
             <element signature="e#701#718#0" expanded="true" />
             <element signature="e#1991#2264#0" expanded="true" />
@@ -689,9 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rio/ospf/adapter/NamaRouterAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="3" selection-start="458" selection-end="458" vertical-scroll-proportion="0.66057444" vertical-offset="32" max-vertical-offset="1425">
+        <state line="4" column="32" selection-start="125" selection-end="125" vertical-scroll-proportion="0.7" vertical-offset="32" max-vertical-offset="1425">
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#558#566#0" expanded="true" />
             <element signature="e#701#718#0" expanded="true" />
             <element signature="e#1991#2264#0" expanded="true" />
