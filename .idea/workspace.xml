@@ -503,7 +503,11 @@
       <created>1388721713099</created>
       <updated>1388721713099</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tambah untuk input nama router&#10;">
+      <created>1388721860580</created>
+      <updated>1388721860580</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -571,7 +575,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="tambah untuk input nama router" />
-    <option name="LAST_COMMIT_MESSAGE" value="tambah untuk input nama router" />
+    <MESSAGE value="tambah untuk input nama router&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="tambah untuk input nama router&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
