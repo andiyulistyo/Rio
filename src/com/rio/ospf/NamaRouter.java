@@ -54,7 +54,8 @@ public class NamaRouter extends ListActivity implements View.OnClickListener {
         // get value dari inputan di listview
         for (int i = 0; i < routerAdapter.getCount(); i++) {
             // ambil data dari adapter
-            arrayList.add(routerAdapter.getItem(i).toString());
+//            arrayList.add(routerAdapter.getItem(i).toString());
+            arrayList.add(routerAdapter.hashMap.get(i));
         }
 
         // panggil class selanjutnya dan kirim value nama yang telah
