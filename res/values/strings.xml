@@ -9,4 +9,7 @@
     <string name="hintIP">Input IP</string>
     <string name="hintSubnet">Input Subnet</string>
     <string name="inputdetail">Input Detail Router</string>
+    <string name="routername">Nama Router</string>
+    <string name="routerbandiwith">Bandiwith Router :</string>
+    <string name="inputsubnet">Input Subnet</string>
 </resources>
