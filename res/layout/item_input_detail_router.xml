@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/routername"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/textViewNama"/>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routerbandiwith"
+                android:id="@+id/textView2"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextBandwith"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PORT FA0"
+                    android:id="@+id/checkBoxFA0"/>
+            <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerFA0" android:spinnerMode="dialog"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/layoutFA0"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hintIP"
+                        android:id="@+id/textView3"/>
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editTextIPFA0"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/inputsubnet"
+                        android:id="@+id/textView4"/>
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editTextSubnetFA0"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                  android:layout_height="fill_parent" android:id="@+id/linearLayout2">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PORT FA1"
+                      android:id="@+id/checkBoxFA1" android:checked="false"/>
+            <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
+                     android:id="@+id/spinnerFA1" android:spinnerMode="dialog"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/layoutFA1"
+                      android:visibility="gone"
+                      android:orientation="vertical" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/hintIP" android:id="@+id/textView5"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/editTextIPFA1"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/inputsubnet" android:id="@+id/textView6"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/editTextSubnetFA1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                  android:layout_height="fill_parent" android:id="@+id/linearLayout3">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PORT SE0"
+                      android:id="@+id/checkBoxSE0" android:checked="false"/>
+            <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
+                     android:id="@+id/spinnerSE0" android:spinnerMode="dialog"/>
+        </LinearLayout>
+        <LinearLayout android:visibility="gone"
+                      android:id="@+id/layoutSE0" android:orientation="vertical" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/hintIP" android:id="@+id/textView7"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/editTextIPSE0"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/inputsubnet" android:id="@+id/textView8"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/editTextSubnetSE0"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                  android:layout_height="fill_parent" android:id="@+id/linearLayout5">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PORT SE1"
+                      android:id="@+id/checkBoxSE1" android:checked="false"/>
+            <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
+                     android:id="@+id/spinnerSE1" android:spinnerMode="dialog"/>
+        </LinearLayout>
+        <LinearLayout android:visibility="gone" android:id="@+id/layoutSE1" android:orientation="vertical" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/hintIP" android:id="@+id/textView9"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/editTextIPSE1"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/inputsubnet" android:id="@+id/textView10"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/editTextSE1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
