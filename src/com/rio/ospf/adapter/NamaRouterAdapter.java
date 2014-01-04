@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.TableLayout;
 import com.rio.ospf.R;
 
 import java.util.ArrayList;
@@ -26,13 +27,11 @@ public class NamaRouterAdapter extends BaseAdapter {
 
     public HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
 
-    private ArrayList<Hashtable<String, String>> data;
 
     public NamaRouterAdapter(List<String> nama, Context mcontext) {
         this.nama = nama;
         this.context = mcontext;
         layoutInflater = LayoutInflater.from(context);
-        data = new ArrayList<Hashtable<String, String>>(nama.size());
     }
 
     @Override
