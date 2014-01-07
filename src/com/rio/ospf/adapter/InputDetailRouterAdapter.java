@@ -274,8 +274,6 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             }
         });
 
-        Log.i("getview "+viewGroup.getTag()+position, holder.spinnerFA0.getSelectedItemPosition()+"");
-
         // set checkbox fa0
         holder.checkBoxFa0.setTag(position);
         if (checboxFA0.length > 0) {
