@@ -23,10 +23,17 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater layoutInflater;
     private HashMap<Integer, Boolean> checkBoxMap = new HashMap<Integer, Boolean>();
+    private HashMap<Integer, Integer> spinnerFA0;
+    private HashMap<Integer, Integer> spinnerFA1;
+    private HashMap<Integer, Integer> spinnerSE0;
+    private HashMap<Integer, Integer> spinnerSE1;
+
 
     public HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
     public HashMap<Integer, String> ipMap = new HashMap<Integer, String>();
     public HashMap<Integer, String> subnetMap = new HashMap<Integer, String>();
+
+
 
     private boolean[] checboxFA0, checboxFA1, checboxSE0, checboxSE1;
 
@@ -41,6 +48,12 @@ public class InputDetailRouterAdapter extends BaseAdapter {
         checboxFA1 = new boolean[listNama.size()];
         checboxSE0 = new boolean[listNama.size()];
         checboxSE1 = new boolean[listNama.size()];
+
+        spinnerFA0 = new HashMap<Integer, Integer>(listNama.size());
+        spinnerFA1 = new HashMap<Integer, Integer>(listNama.size());
+        spinnerSE0 = new HashMap<Integer, Integer>(listNama.size());
+        spinnerSE1 = new HashMap<Integer, Integer>(listNama.size());
+
     }
 
     @Override
@@ -80,7 +93,12 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             holder.checkBoxSe0 = (CheckBox) view.findViewById(R.id.checkBoxSE0);
             holder.checkBoxSe1 = (CheckBox) view.findViewById(R.id.checkBoxSE1);
 
-//            // check checkbox fa0
+            holder.spinnerFA0 = (Spinner) view.findViewById(R.id.spinnerFA0);
+            holder.spinnerFA1 = (Spinner) view.findViewById(R.id.spinnerFA1);
+            holder.spinnerSE0 = (Spinner) view.findViewById(R.id.spinnerSE0);
+            holder.spinnerSE1 = (Spinner) view.findViewById(R.id.spinnerSE1);
+
+            // check checkbox fa0
             holder.checkBoxFa0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -124,9 +142,9 @@ public class InputDetailRouterAdapter extends BaseAdapter {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     Integer pos = (Integer) compoundButton.getTag();
                     if (b){
-                        checboxFA1[pos.intValue()] = true;
+                        checboxSE0[pos.intValue()] = true;
                     } else  {
-                        checboxFA1[pos.intValue()] = false;
+                        checboxSE0[pos.intValue()] = false;
                         Log.e("checked", "unchecked");
                     }
 
@@ -143,9 +161,9 @@ public class InputDetailRouterAdapter extends BaseAdapter {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     Integer pos = (Integer) compoundButton.getTag();
                     if (b){
-                        checboxFA1[pos.intValue()] = true;
+                        checboxSE1[pos.intValue()] = true;
                     } else  {
-                        checboxFA1[pos.intValue()] = false;
+                        checboxSE1[pos.intValue()] = false;
                         Log.e("checked", "unchecked");
                     }
 
@@ -156,9 +174,107 @@ public class InputDetailRouterAdapter extends BaseAdapter {
                 }
             });
 
+
             view.setTag(holder);
 
         } else holder = (ViewHolder) view.getTag();
+
+        // buat array adapter untuk spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, listNama);
+        holder.spinnerFA0.setAdapter(adapter);
+        holder.spinnerFA1.setAdapter(adapter);
+        holder.spinnerSE0.setAdapter(adapter);
+        holder.spinnerSE1.setAdapter(adapter);
+
+        // set data to spinner fa0
+        if (spinnerFA0.get(position) != null) {
+            holder.spinnerFA0.setTag(position);
+            holder.spinnerFA0.setSelection(spinnerFA0.get(position));
+        } else {
+            holder.spinnerFA0.setTag(position);
+            holder.spinnerFA0.setSelection(0);
+        }
+
+        // set data to spinner fa1
+        if (spinnerFA1.get(position) != null) {
+            holder.spinnerFA1.setTag(position);
+            holder.spinnerFA1.setSelection(spinnerFA1.get(position));
+        } else {
+            holder.spinnerFA1.setTag(position);
+            holder.spinnerFA1.setSelection(0);
+        }
+
+        // set data to spinner se0
+        if (spinnerSE0.get(position) != null) {
+            holder.spinnerSE0.setTag(position);
+            holder.spinnerSE0.setSelection(spinnerSE0.get(position));
+        } else {
+            holder.spinnerSE0.setTag(position);
+            holder.spinnerSE0.setSelection(0);
+        }
+
+        // set data to spinner se1
+        if (spinnerSE1.get(position) != null) {
+            holder.spinnerSE1.setTag(position);
+            holder.spinnerSE1.setSelection(spinnerSE1.get(position));
+        } else {
+            holder.spinnerSE1.setTag(position);
+            holder.spinnerSE1.setSelection(0);
+        }
+
+        // handle spinnerFA0 dari recycle listview
+        holder.spinnerFA0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                spinnerFA0.put(position, i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        // handle spinnerFA1 dari recycle listview
+        holder.spinnerFA1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                spinnerFA1.put(position, i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        // handle spinnerSE0 dari recycle listview
+        holder.spinnerSE0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                spinnerSE0.put(position, i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        // handle spinnerSE1 dari recycle listview
+        holder.spinnerFA0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                spinnerSE1.put(position, i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        Log.i("getview "+viewGroup.getTag()+position, holder.spinnerFA0.getSelectedItemPosition()+"");
 
         // set checkbox fa0
         holder.checkBoxFa0.setTag(position);
@@ -187,7 +303,7 @@ public class InputDetailRouterAdapter extends BaseAdapter {
         // set data nama router
         holder.textViewNama.setText(listNama.get(position));
 
-        // set id
+        // set id bandiwith
         holder.editTextBandwith.setId(position);
         // set value if exist data
         if (bandwithMap.isEmpty()) {
@@ -199,6 +315,7 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             @Override
             public void onFocusChange(View view, boolean b) {
                 if (!b) {
+                    // ambil data dan masukan ke array
                     bandwithMap.put(position, holder.editTextBandwith.getText().toString());
                 }
             }
@@ -207,11 +324,11 @@ public class InputDetailRouterAdapter extends BaseAdapter {
         return view;
     }
 
-
     class ViewHolder {
         private TextView textViewNama;
         private EditText editTextBandwith, editTextIpFa0, editTextIpFa1, editTextIpSe0, editTextIpSe1, editTextSubnetFa0, editTextSubnetFa1;
         private LinearLayout layoutFA0, layoutFA1, layoutSE0, layoutSE1;
         private CheckBox checkBoxFa0, checkBoxFa1, checkBoxSe0, checkBoxSe1;
+        private Spinner spinnerFA0, spinnerFA1, spinnerSE0, spinnerSE1;
     }
 }
