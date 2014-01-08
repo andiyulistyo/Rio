@@ -1,6 +1,8 @@
 package com.rio.ospf.adapter;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -30,8 +32,15 @@ public class InputDetailRouterAdapter extends BaseAdapter {
 
 
     public HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
-    public HashMap<Integer, String> ipMap = new HashMap<Integer, String>();
-    public HashMap<Integer, String> subnetMap = new HashMap<Integer, String>();
+    public HashMap<Integer, String> ipFA0;
+    public HashMap<Integer, String> ipFA1 = new HashMap<Integer, String>();
+    public HashMap<Integer, String> ipSE0 = new HashMap<Integer, String>();
+    public HashMap<Integer, String> ipSE1 = new HashMap<Integer, String>();
+    public HashMap<Integer, String> subnetFA0 = new HashMap<Integer, String>();
+    public HashMap<Integer, String> subnetFA1 = new HashMap<Integer, String>();
+    public HashMap<Integer, String> subnetSE0 = new HashMap<Integer, String>();
+    public HashMap<Integer, String> subnetSE1 = new HashMap<Integer, String>();
+
 
 
 
@@ -54,6 +63,7 @@ public class InputDetailRouterAdapter extends BaseAdapter {
         spinnerSE0 = new HashMap<Integer, Integer>(listNama.size());
         spinnerSE1 = new HashMap<Integer, Integer>(listNama.size());
 
+        ipFA0 = new HashMap<Integer, String>(listNama.size());
     }
 
     @Override
@@ -97,6 +107,16 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             holder.spinnerFA1 = (Spinner) view.findViewById(R.id.spinnerFA1);
             holder.spinnerSE0 = (Spinner) view.findViewById(R.id.spinnerSE0);
             holder.spinnerSE1 = (Spinner) view.findViewById(R.id.spinnerSE1);
+
+            holder.editTextIpFa0 = (EditText) view.findViewById(R.id.editTextIPFA0);
+            holder.editTextIpFa1 = (EditText) view.findViewById(R.id.editTextIPFA1);
+            holder.editTextIpSe0 = (EditText) view.findViewById(R.id.editTextIPSE0);
+            holder.editTextIpSe1 = (EditText) view.findViewById(R.id.editTextIPSE1);
+
+            holder.editTextSubnetFa0 = (EditText) view.findViewById(R.id.editTextSubnetFA0);
+            holder.editTextSubnetFa1 = (EditText) view.findViewById(R.id.editTextSubnetFA1);
+            holder.editTextSubnetSE0 = (EditText) view.findViewById(R.id.editTextSubnetSE0);
+            holder.editTextSubnetSE1 = (EditText) view.findViewById(R.id.editTextSubnetSE1);
 
             // check checkbox fa0
             holder.checkBoxFa0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -319,12 +339,124 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             }
         });
 
+        // set and get value ip fa0
+        holder.editTextIpFa0.setTag(position);
+        if (ipFA0.isEmpty()){
+            holder.editTextIpFa0.setText("");
+        } else holder.editTextIpFa0.setText(ipFA0.get(position));
+        holder.editTextIpFa0.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    ipFA0.put(position, holder.editTextIpFa0.getText().toString());
+                }
+            }
+        });
+
+        // set and get value ip fa1
+        holder.editTextIpFa1.setTag(position);
+        if (ipFA1.isEmpty()){
+            holder.editTextIpFa1.setText("");
+        } else holder.editTextIpFa1.setText(ipFA1.get(position));
+        holder.editTextIpFa1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    ipFA1.put(position, holder.editTextIpFa1.getText().toString());
+                }
+            }
+        });
+
+        // set and get value ip se0
+        holder.editTextIpSe0.setTag(position);
+        if (ipSE0.isEmpty()){
+            holder.editTextIpSe0.setText("");
+        } else holder.editTextIpSe0.setText(ipSE0.get(position));
+        holder.editTextIpSe0.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    ipSE0.put(position, holder.editTextIpSe0.getText().toString());
+                }
+            }
+        });
+
+        // set and get value ip se1
+        holder.editTextIpSe1.setTag(position);
+        if (ipSE1.isEmpty()){
+            holder.editTextIpSe1.setText("");
+        } else holder.editTextIpSe1.setText(ipSE1.get(position));
+        holder.editTextIpSe1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    ipSE1.put(position, holder.editTextIpSe1.getText().toString());
+                }
+            }
+        });
+
+        // get and set value from subnet fa0
+        holder.editTextSubnetFa0.setTag(position);
+        if (subnetFA0.isEmpty()){
+            holder.editTextSubnetFa0.setText("");
+        } else holder.editTextSubnetFa0.setText(subnetFA0.get(position));
+        holder.editTextSubnetFa0.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    subnetFA0.put(position, holder.editTextSubnetFa0.getText().toString());
+                }
+            }
+        });
+
+        // get and set value from subnet fa1
+        holder.editTextSubnetFa0.setTag(position);
+        if (subnetFA1.isEmpty()){
+            holder.editTextSubnetFa1.setText("");
+        } else holder.editTextSubnetFa1.setText(subnetFA1.get(position));
+        holder.editTextSubnetFa1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    subnetFA1.put(position, holder.editTextSubnetFa1.getText().toString());
+                }
+            }
+        });
+
+        // get and set value from subnet se0
+        holder.editTextSubnetSE0.setTag(position);
+        if (subnetSE0.isEmpty()){
+            holder.editTextSubnetSE0.setText("");
+        } else holder.editTextSubnetSE0.setText(subnetSE0.get(position));
+        holder.editTextSubnetSE0.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    subnetSE0.put(position, holder.editTextSubnetSE0.getText().toString());
+                }
+            }
+        });
+
+        // get and set value from subnet se1
+        holder.editTextSubnetSE1.setTag(position);
+        if (subnetSE1.isEmpty()){
+            holder.editTextSubnetSE1.setText("");
+        } else holder.editTextSubnetSE1.setText(subnetSE1.get(position));
+        holder.editTextSubnetSE1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (!b) {
+                    subnetSE1.put(position, holder.editTextSubnetSE1.getText().toString());
+                }
+            }
+        });
+
         return view;
     }
 
     class ViewHolder {
         private TextView textViewNama;
-        private EditText editTextBandwith, editTextIpFa0, editTextIpFa1, editTextIpSe0, editTextIpSe1, editTextSubnetFa0, editTextSubnetFa1;
+        private EditText editTextBandwith, editTextIpFa0, editTextIpFa1, editTextIpSe0, editTextIpSe1, editTextSubnetFa0, editTextSubnetFa1, editTextSubnetSE0, editTextSubnetSE1;
         private LinearLayout layoutFA0, layoutFA1, layoutSE0, layoutSE1;
         private CheckBox checkBoxFa0, checkBoxFa1, checkBoxSe0, checkBoxSe1;
         private Spinner spinnerFA0, spinnerFA1, spinnerSE0, spinnerSE1;
