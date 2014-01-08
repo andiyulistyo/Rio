@@ -25,10 +25,10 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater layoutInflater;
     private HashMap<Integer, Boolean> checkBoxMap = new HashMap<Integer, Boolean>();
-    private HashMap<Integer, Integer> spinnerFA0;
-    private HashMap<Integer, Integer> spinnerFA1;
-    private HashMap<Integer, Integer> spinnerSE0;
-    private HashMap<Integer, Integer> spinnerSE1;
+    public HashMap<Integer, Integer> spinnerFA0;
+    public HashMap<Integer, Integer> spinnerFA1;
+    public HashMap<Integer, Integer> spinnerSE0;
+    public HashMap<Integer, Integer> spinnerSE1;
 
 
     public HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
@@ -41,10 +41,7 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     public HashMap<Integer, String> subnetSE0 = new HashMap<Integer, String>();
     public HashMap<Integer, String> subnetSE1 = new HashMap<Integer, String>();
 
-
-
-
-    private boolean[] checboxFA0, checboxFA1, checboxSE0, checboxSE1;
+    public boolean[] checboxFA0, checboxFA1, checboxSE0, checboxSE1;
 
 
     public InputDetailRouterAdapter(ArrayList<String> listNama, Context context) {
@@ -282,7 +279,7 @@ public class InputDetailRouterAdapter extends BaseAdapter {
         });
 
         // handle spinnerSE1 dari recycle listview
-        holder.spinnerFA0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        holder.spinnerSE1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerSE1.put(position, i);
