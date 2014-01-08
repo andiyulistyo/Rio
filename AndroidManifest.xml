@@ -14,5 +14,9 @@
         </activity>
         <activity android:name=".NamaRouter" android:label="@string/inputNama"/>
         <activity android:name=".InputDetailRouter" android:label="@string/inputdetail"/>
+        <activity android:name=".Cost" android:label="Informasi Cost Router"/>
+        <activity android:name=".InterfaceActivity" android:label="Informasi Interface Router"/>
+        <activity android:name=".Ospf" android:label="Informasi OSPF"/>
+        <activity android:name=".Menu" android:label="Menu Pilihan"/>
     </application>
 </manifest>
