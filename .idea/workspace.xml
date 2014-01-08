@@ -34,7 +34,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fed379be-7b7b-485b-9523-81ee578466d8" name="Default" comment="tambah">
+    <list default="true" id="fed379be-7b7b-485b-9523-81ee578466d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OSPF.iws" />
@@ -641,7 +641,11 @@
       <created>1389205484437</created>
       <updated>1389205484437</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="add layout">
+      <created>1389205537454</created>
+      <updated>1389205537454</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -726,7 +730,8 @@
     <MESSAGE value="fix bug" />
     <MESSAGE value="change string variable" />
     <MESSAGE value="update string" />
-    <option name="LAST_COMMIT_MESSAGE" value="update string" />
+    <MESSAGE value="add layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="add layout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
