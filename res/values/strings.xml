@@ -12,4 +12,7 @@
     <string name="routername">Nama Router</string>
     <string name="routerbandiwith">Bandiwith Router :</string>
     <string name="inputsubnet">Input Subnet</string>
+    <string name="hasilospf">Tampilkan Hasil OSPF</string>
+    <string name="interfaceshow">Tampilkan IP Interface</string>
+    <string name="cost">Hitung COST</string>
 </resources>
