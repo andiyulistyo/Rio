@@ -2,18 +2,16 @@ package com.rio.ospf;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.Spinner;
-import android.widget.Toast;
 import com.rio.ospf.adapter.InputDetailRouterAdapter;
+import com.rio.ospf.entity.Matrix;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by souttab on 03/01/14.
@@ -22,10 +20,10 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
 
     private InputDetailRouterAdapter routerAdapter;
     private Button buttonNext;
-//    private Spinner spinnerFA0, spinnerFA1, spinnerSE0, spinnerSE1;
-//    private CheckBox checkBoxFA0, checkBoxFA1, checkBoxSE0, checkBoxSE1;
+    public static ArrayList<String> namaRouter;
 
-    private int matrix[][];
+    public static int matrix[][];
+    public static List<Short> bandwidthList = new ArrayList<Short>();
 
 
     @Override
@@ -33,7 +31,7 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_detail_router);
 
-        ArrayList<String> namaRouter = getIntent().getExtras().getStringArrayList("nama");
+        namaRouter = getIntent().getExtras().getStringArrayList("nama");
 
         buttonNext = (Button) findViewById(R.id.buttonSelanjut);
         buttonNext.setOnClickListener(this);
@@ -49,13 +47,10 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int size = routerAdapter.getCount();
-
-        int wou = getListView().getChildCount();
-        Log.i("banyaknya chil ", wou+"");
-
-        
-
-        matrix(size, size);
+        for (int i = 0; i < size; i++) {
+            bandwidthList.add(Short.valueOf(routerAdapter.bandwithMap.get(i)));
+        }
+        matrixx(size, size);
 
         for (int i = 1; i < size; i++) {
 
@@ -146,6 +141,8 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
                 matrix[i][se1] = matrix[se1][i] = 64;
             }
         }
+
+
         for (int i =0 ; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 Log.i("Log matrix ["+i+"]["+j+"]", ""+matrix[i][j]);
@@ -157,7 +154,7 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public void matrix(int panjangMatrix, int panjangMatrix2) {
+    public void matrixx(int panjangMatrix, int panjangMatrix2) {
         matrix = new int[panjangMatrix][panjangMatrix2];
         for (int i = 0; i < panjangMatrix; i++) {
             for (int j = 0; j < panjangMatrix2; j++) {
@@ -165,5 +162,9 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
                 Log.i("matrix[" + i + "][" + j + "]", matrix[i][j] + "");
             }
         }
+    }
+
+    public static List<Short> getBandwidthList() {
+        return bandwidthList;
     }
 }
