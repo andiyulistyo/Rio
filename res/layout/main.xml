@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:baselineAligned="false"
+              tools:context=".BanyakRouter"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
@@ -9,9 +10,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/editTextBanyakRouter"/>
     <Button
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editTextBanyakRouter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Selanjutnya"
             android:id="@+id/buttonSelanjutnya" android:layout_gravity="right"/>
-</LinearLayout>
+
+    <com.haarman.supertooltips.ToolTipRelativeLayout
+            android:id="@+id/layoutFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+</RelativeLayout>
 
