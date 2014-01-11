@@ -5,4 +5,55 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:stretchColumns="1">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Router"
+                    android:id="@+id/textView"/>
+            <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinneriP"/>
+        </TableRow>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SHOW IP"
+                android:id="@+id/buttonShowIp"/>
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+        </TableRow>
+    </TableLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                  android:layout_height="fill_parent" android:id="@+id/linearLayout">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FA0"
+                android:id="@+id/textViewFA0" android:layout_gravity="left|center_vertical"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IP"
+                android:id="@+id/textViewFA0IP" android:layout_gravity="left|center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FA1"
+                  android:id="@+id/textViewFA1" android:layout_gravity="left|center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
+                  android:id="@+id/textViewFA1IP" android:layout_gravity="left|center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SE0"
+                  android:id="@+id/textViewSE0" android:layout_gravity="left|center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
+                  android:id="@+id/textViewSE0IP" android:layout_gravity="left|center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FA1"
+                  android:id="@+id/textViewSE1" android:layout_gravity="left|center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
+                  android:id="@+id/textViewSE1IP" android:layout_gravity="left|center_vertical"/>
+    </LinearLayout>
 </LinearLayout>

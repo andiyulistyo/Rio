@@ -47,12 +47,10 @@ public class Cost extends Activity implements View.OnClickListener {
             jarak[i] = 9999;
             set[i] = false;
             bandwidth[i] = bandwidthList.get(i);
-            Log.i("bandwidth log", bandwidth[i]+"");
         }
 
         jarak[awal] = 0;
         bandwidth[tujuan] = 0;
-        short cost = 0;
 
         for (short i = 0; i < size; i++) {
             min = 9999;
@@ -67,7 +65,6 @@ public class Cost extends Activity implements View.OnClickListener {
             for (short l = 0; l < size; l++) {
                 if (!set[l] && jarak[minimalIndex] != 9999 && (jarak[minimalIndex] + matrix[minimalIndex][l] + bandwidth[l]) < jarak[l]) {
                     jarak[l] = (short) (jarak[minimalIndex] + matrix[minimalIndex][l] + bandwidth[l]);
-                        cost = jarak[l];
                     }
                 }
             }
