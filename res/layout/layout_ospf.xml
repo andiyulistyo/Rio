@@ -2,6 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:padding="10dp"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
@@ -40,20 +41,6 @@
     <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
                   android:id="@+id/linearLayout">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FA0"
-                  android:id="@+id/textViewFA0" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
-                  android:id="@+id/textViewFA0IP" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FA1"
-                  android:id="@+id/textViewFA1" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
-                  android:id="@+id/textViewFA1IP" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SE0"
-                  android:id="@+id/textViewSE0" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
-                  android:id="@+id/textViewSE0IP" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FA1"
-                  android:id="@+id/textViewSE1" android:layout_gravity="left|center_vertical"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP"
-                  android:id="@+id/textViewSE1IP" android:layout_gravity="left|center_vertical"/>
+                  android:id="@+id/textViewInformasiOSPF" android:layout_gravity="left|center_vertical"/>
     </LinearLayout>
 </LinearLayout>
