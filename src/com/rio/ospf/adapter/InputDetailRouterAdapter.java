@@ -30,7 +30,7 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     public HashMap<Integer, Integer> spinnerSE0;
     public HashMap<Integer, Integer> spinnerSE1;
 
-    public HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
     public HashMap<Integer, String> ipFA0;
     public HashMap<Integer, String> ipFA1 = new HashMap<Integer, String>();
     public HashMap<Integer, String> ipSE0 = new HashMap<Integer, String>();
