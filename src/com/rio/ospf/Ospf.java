@@ -47,30 +47,52 @@ public class Ospf extends Activity implements View.OnClickListener {
         checkBoxSE0 = InputDetailRouterAdapter.checboxSE0[selectedItemPosition];
         checkBoxSE1 = InputDetailRouterAdapter.checboxSE1[selectedItemPosition];
 
+        String ipFA0 = InputDetailRouterAdapter.ipFA0.get(selectedItemPosition);
+        String ipFA1 = InputDetailRouterAdapter.ipFA1.get(selectedItemPosition);
+        String ipSE0 = InputDetailRouterAdapter.ipSE0.get(selectedItemPosition);
+        String ipSE1 = InputDetailRouterAdapter.ipSE1.get(selectedItemPosition);
+
+        String subnetFA0 = InputDetailRouterAdapter.subnetFA0.get(selectedItemPosition);
+        String subnetFA1 = InputDetailRouterAdapter.subnetFA1.get(selectedItemPosition);
+        String subnetSE0 = InputDetailRouterAdapter.subnetSE0.get(selectedItemPosition);
+        String subnetSE1 = InputDetailRouterAdapter.subnetSE1.get(selectedItemPosition);
+
         String routerFA0, routerFA1, routerSE0, routerSE1;
 
         editTextBandwith.setText(bandwidth);
 
         if (checkBoxFA0) {
-            routerFA0 = "terhubung dengan router "+InputDetailRouterAdapter.spinnerFA0Selected.get(selectedItemPosition);
+            routerFA0 = "terhubung dengan router <b>"
+                    +InputDetailRouterAdapter.spinnerFA0Selected.get(selectedItemPosition)+"" +
+                    "<br></b> IP     : "+ipFA0+"" +
+                    "<br> Subnet : "+subnetFA0;
         } else routerFA0 = "ini tidak digunakan";
 
         if (checkBoxFA1) {
-            routerFA1 = "terhubung dengan router "+InputDetailRouterAdapter.spinnerFA1Selected.get(selectedItemPosition);
+            routerFA1 = "terhubung dengan router "
+                    +InputDetailRouterAdapter.spinnerFA1Selected.get(selectedItemPosition)+"" +
+                    "<br> IP     : "+ipFA1+"" +
+                    "<br> Subnet : "+subnetFA1;
         } else routerFA1 = "ini tidak digunakan";
 
         if (checkBoxSE0) {
-            routerSE0 = "terhubung dengan router "+InputDetailRouterAdapter.spinnerSE0Selected.get(selectedItemPosition);
+            routerSE0 = "terhubung dengan router "
+                    +InputDetailRouterAdapter.spinnerSE0Selected.get(selectedItemPosition)+"" +
+                    "<br> IP     : "+ipSE0+"" +
+                    "<br> Subnet : "+subnetSE0;
         } else routerSE0 = " ini tidak digunakan";
 
         if (checkBoxSE1) {
-            routerSE1 = "terhubung dengan router "+InputDetailRouterAdapter.spinnerSE1Selected.get(selectedItemPosition);
+            routerSE1 = "terhubung dengan router "
+                    +InputDetailRouterAdapter.spinnerSE1Selected.get(selectedItemPosition)+"" +
+                    "<br> IP     : "+ipSE1+"" +
+                    "<br> Subnet : "+subnetSE1;
         } else routerSE1 = " ini tidak digunakan";
 
         textViewInformasi.setText(Html.fromHtml("<h1>Configurasi Router <b>" + nameRouter + "</b></h1> " +
-                "<br>PORT FA0 <b>" + routerFA0 + "</b> <br>" +
-                "<br>PORT FA1 <b>" + routerFA1 + "</b> <br> " +
-                "<br>PORT SEO <b>" + routerSE0 + "</b> <br>" +
-                "<br>PORT SE1 <b>" + routerSE1 + "</b> <br>"));
+                "<br>PORT FA0 " + routerFA0 + "<br>" +
+                "<br>PORT FA1 " + routerFA1 + "<br> " +
+                "<br>PORT SEO " + routerSE0 + "<br>" +
+                "<br>PORT SE1 " + routerSE1 + ""));
     }
 }
