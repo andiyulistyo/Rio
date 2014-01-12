@@ -30,7 +30,6 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     public HashMap<Integer, Integer> spinnerSE0;
     public HashMap<Integer, Integer> spinnerSE1;
 
-
     public HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
     public HashMap<Integer, String> ipFA0;
     public HashMap<Integer, String> ipFA1 = new HashMap<Integer, String>();
@@ -41,8 +40,12 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     public HashMap<Integer, String> subnetSE0 = new HashMap<Integer, String>();
     public HashMap<Integer, String> subnetSE1 = new HashMap<Integer, String>();
 
-    public boolean[] checboxFA0, checboxFA1, checboxSE0, checboxSE1;
+    public static boolean[] checboxFA0, checboxFA1, checboxSE0, checboxSE1;
 
+    public static HashMap<Integer, String> spinnerFA0Selected = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> spinnerFA1Selected = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> spinnerSE0Selected = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> spinnerSE1Selected = new HashMap<Integer, String>();
 
     public InputDetailRouterAdapter(ArrayList<String> listNama, Context context) {
         this.listNama = listNama;
@@ -115,16 +118,23 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             holder.editTextSubnetSE0 = (EditText) view.findViewById(R.id.editTextSubnetSE0);
             holder.editTextSubnetSE1 = (EditText) view.findViewById(R.id.editTextSubnetSE1);
 
+
+            holder.spinnerFA0.setEnabled(false);
+            holder.spinnerFA1.setEnabled(false);
+            holder.spinnerSE0.setEnabled(false);
+            holder.spinnerSE1.setEnabled(false);
+
             // check checkbox fa0
             holder.checkBoxFa0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                     Integer pos = (Integer) compoundButton.getTag();
                     if (isChecked){
+                        holder.spinnerFA0.setEnabled(true);
                         checboxFA0[pos.intValue()] = true;
                     } else  {
                         checboxFA0[pos.intValue()] = false;
-                        Log.e("checked", "unchecked");
+                        holder.spinnerFA0.setEnabled(false);
                     }
 
                     // check layout hide atau gak
@@ -141,9 +151,10 @@ public class InputDetailRouterAdapter extends BaseAdapter {
                     Integer pos = (Integer) compoundButton.getTag();
                     if (b){
                         checboxFA1[pos.intValue()] = true;
+                        holder.spinnerFA1.setEnabled(true);
                     } else  {
                         checboxFA1[pos.intValue()] = false;
-                        Log.e("checked", "unchecked");
+                        holder.spinnerFA1.setEnabled(false);
                     }
 
                     // check layout hide atau gak
@@ -160,9 +171,10 @@ public class InputDetailRouterAdapter extends BaseAdapter {
                     Integer pos = (Integer) compoundButton.getTag();
                     if (b){
                         checboxSE0[pos.intValue()] = true;
+                        holder.spinnerSE0.setEnabled(true);
                     } else  {
                         checboxSE0[pos.intValue()] = false;
-                        Log.e("checked", "unchecked");
+                        holder.spinnerSE0.setEnabled(false);
                     }
 
                     // check layout hide atau gak
@@ -179,9 +191,10 @@ public class InputDetailRouterAdapter extends BaseAdapter {
                     Integer pos = (Integer) compoundButton.getTag();
                     if (b){
                         checboxSE1[pos.intValue()] = true;
+                        holder.spinnerSE1.setEnabled(true);
                     } else  {
                         checboxSE1[pos.intValue()] = false;
-                        Log.e("checked", "unchecked");
+                        holder.spinnerSE1.setEnabled(false);
                     }
 
                     // check layout hide atau gak
@@ -244,11 +257,13 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerFA0.put(position, i);
+
+                TextView textView = (TextView) view;
+                spinnerFA0Selected.put(position, textView.getText().toString());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -257,11 +272,13 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerFA1.put(position, i);
+
+                TextView textView = (TextView) view;
+                spinnerFA1Selected.put(position, textView.getText().toString());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -270,11 +287,12 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerSE0.put(position, i);
+                TextView textView = (TextView) view;
+                spinnerSE0Selected.put(position, textView.getText().toString());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -283,11 +301,12 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerSE1.put(position, i);
+                TextView textView = (TextView) view;
+                spinnerSE1Selected.put(position, textView.getText().toString());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -330,7 +349,6 @@ public class InputDetailRouterAdapter extends BaseAdapter {
             @Override
             public void onFocusChange(View view, boolean b) {
                 if (!b) {
-                    // ambil data dan masukan ke array
                     bandwithMap.put(position, holder.editTextBandwith.getText().toString());
                 }
             }
@@ -453,7 +471,9 @@ public class InputDetailRouterAdapter extends BaseAdapter {
 
     class ViewHolder {
         private TextView textViewNama;
-        private EditText editTextBandwith, editTextIpFa0, editTextIpFa1, editTextIpSe0, editTextIpSe1, editTextSubnetFa0, editTextSubnetFa1, editTextSubnetSE0, editTextSubnetSE1;
+        private EditText editTextBandwith, editTextIpFa0, editTextIpFa1,
+                editTextIpSe0, editTextIpSe1, editTextSubnetFa0, editTextSubnetFa1,
+                editTextSubnetSE0, editTextSubnetSE1;
         private LinearLayout layoutFA0, layoutFA1, layoutSE0, layoutSE1;
         private CheckBox checkBoxFa0, checkBoxFa1, checkBoxSe0, checkBoxSe1;
         private Spinner spinnerFA0, spinnerFA1, spinnerSE0, spinnerSE1;
