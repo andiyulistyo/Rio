@@ -7,10 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import com.rio.ospf.adapter.InputDetailRouterAdapter;
-import com.rio.ospf.entity.Matrix;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -24,6 +22,7 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
 
     public static int matrix[][];
     public static List<Short> bandwidthList = new ArrayList<Short>();
+    public static List<Short> spinnerFA0 = new ArrayList<Short>();
 
 
     @Override
@@ -48,7 +47,8 @@ public class InputDetailRouter extends ListActivity implements View.OnClickListe
     public void onClick(View view) {
         int size = routerAdapter.getCount();
         for (int i = 0; i < size; i++) {
-            bandwidthList.add(Short.valueOf(routerAdapter.bandwithMap.get(i)));
+            bandwidthList.add(Short.parseShort(routerAdapter.bandwithMap.get(i)));
+
         }
         matrixx(size, size);
 
