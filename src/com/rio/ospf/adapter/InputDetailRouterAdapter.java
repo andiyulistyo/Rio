@@ -31,14 +31,14 @@ public class InputDetailRouterAdapter extends BaseAdapter {
     public HashMap<Integer, Integer> spinnerSE1;
 
     public static HashMap<Integer, String> bandwithMap = new HashMap<Integer, String>();
-    public HashMap<Integer, String> ipFA0;
-    public HashMap<Integer, String> ipFA1 = new HashMap<Integer, String>();
-    public HashMap<Integer, String> ipSE0 = new HashMap<Integer, String>();
-    public HashMap<Integer, String> ipSE1 = new HashMap<Integer, String>();
-    public HashMap<Integer, String> subnetFA0 = new HashMap<Integer, String>();
-    public HashMap<Integer, String> subnetFA1 = new HashMap<Integer, String>();
-    public HashMap<Integer, String> subnetSE0 = new HashMap<Integer, String>();
-    public HashMap<Integer, String> subnetSE1 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> ipFA0 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> ipFA1 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> ipSE0 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> ipSE1 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> subnetFA0 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> subnetFA1 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> subnetSE0 = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> subnetSE1 = new HashMap<Integer, String>();
 
     public static boolean[] checboxFA0, checboxFA1, checboxSE0, checboxSE1;
 
@@ -63,7 +63,6 @@ public class InputDetailRouterAdapter extends BaseAdapter {
         spinnerSE0 = new HashMap<Integer, Integer>(listNama.size());
         spinnerSE1 = new HashMap<Integer, Integer>(listNama.size());
 
-        ipFA0 = new HashMap<Integer, String>(listNama.size());
     }
 
     @Override
