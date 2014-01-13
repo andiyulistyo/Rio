@@ -17,9 +17,5 @@
             android:text="Selanjutnya"
             android:id="@+id/buttonSelanjutnya" android:layout_gravity="right"/>
 
-    <com.haarman.supertooltips.ToolTipRelativeLayout
-            android:id="@+id/layoutFrame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 </RelativeLayout>
 
